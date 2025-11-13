@@ -1,7 +1,8 @@
 {
-  "name": "my-app",
+   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://omar90504.github.io/digital-partner",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
     "@stripe/react-stripe-js": "^5.2.0",
