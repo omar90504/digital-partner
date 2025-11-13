@@ -1,0 +1,40 @@
+/* ===== Global Theme Variables ===== */
+:root {
+  /* Light theme colors */
+  --background: #ffffff;
+  --text: #111111;
+  --primary: #3e46cc;
+  --secondary: #058bd4;
+  --accent: #3ab6fa;
+  --muted: #f0f5f9;
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --background: #0f172a;
+  --text: #f1f5f9;
+  --primary: #7391df;
+  --secondary: #87d1f6;
+  --accent: #0a90ec;
+  --muted: #1e293b;
+}
+
+/* ===== Usage ===== */
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: sans-serif;
+}
+
+button {
+  background: var(--primary);
+  color: var(--text);
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--secondary);
+}

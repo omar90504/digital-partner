@@ -1,0 +1,119 @@
+/* === VARIABLES === */
+:root {
+  --bg: linear-gradient(135deg, #f8f9fc, #eaf6ff);
+  --text: #101010;
+  --text-secondary: #555;
+  --accent: #058bd4;
+  --accent-gradient: linear-gradient(135deg, #058bd4, #3ab6fa);
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-shadow: rgba(5, 139, 212, 0.25);
+}
+
+[data-theme="dark"] {
+  --bg: linear-gradient(135deg, #0f111a, #101b2d);
+  --text: #e8edf7;
+  --text-secondary: #c6ccda;
+  --accent: #3aa0ff;
+  --accent-gradient: linear-gradient(135deg, #3aa0ff, #87d1f6);
+  --card-bg: #1b1c22;
+  --card-border: rgba(255, 255, 255, 0.15);
+  --card-shadow: rgba(58, 160, 255, 0.25);
+}
+
+/* === SECTION WRAPPER === */
+.choose-section {
+  background: var(--bg);
+  padding: 80px 20px;
+  text-align: center;
+  transition: background 0.5s ease;
+}
+
+.choose-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.choose-section h2::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-gradient);
+  border-radius: 10px;
+}
+
+/* === GRID LAYOUT === */
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* === CARD STYLING === */
+.choose-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--card-shadow);
+  padding: 30px 20px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.choose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px var(--card-shadow);
+  border-color: var(--accent);
+}
+
+.choose-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.choose-card:hover img {
+  transform: scale(1.1);
+}
+
+.choose-card h3 {
+  color: var(--text);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.choose-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .choose-section h2 {
+    font-size: 2rem;
+  }
+
+  .choose-card {
+    padding: 25px 15px;
+  }
+
+  .choose-card img {
+    width: 65px;
+    height: 65px;
+  }
+}

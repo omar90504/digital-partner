@@ -1,0 +1,243 @@
+:root {
+  --bg: #f8f9fc;
+  --text-primary: #101010;
+  --text-secondary: #646464;
+  --accent: #058bd4;
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text-primary: #e6eef8;
+  --text-secondary: #a0a0a0;
+  --accent: #3aa0ff;
+  --card-bg: #1e1e1e;
+}
+
+/* ===== Pricing Section ===== */
+.pricing-section {
+  width: 1200px;
+  max-width: 95%;
+  margin: 0 auto;
+  background-color: var(--bg);
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* ===== Header ===== */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pricing-header .sub-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.pricing-header .title-heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ===== Columns Layout ===== */
+.pricing-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ===== Column ===== */
+.pricing-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%;
+}
+
+/* ===== Card Styles ===== */
+.pricing-card {
+  background-color: var(--card-bg);
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* ===== Highlight Cards ===== */
+.highlight-card h2,
+.highlight-card h5 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.pricing-highlight {
+    border-radius: 12px;
+    background-color: var(--bg);
+    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--accent);
+  font-weight: 500;
+    margin: -5px;    
+}
+
+.pricing-highlight i {
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.pricing-highlight:hover i {
+  transform: translateX(5px);
+}
+
+/* ===== Main Pricing Info ===== */
+.pricing-main h4 {
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.pricing-main p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.price h3 {
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.price p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ===== Global Anchor Styling ===== */
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* ===== Accent Button ===== */
+.btn-accent {
+    width: 300px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: var(--bg);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+  margin-bottom: 15px;
+}
+
+.btn-accent:hover {
+  background-color: #0467b0;
+}
+
+/* ===== Core Benefits ===== */
+.core-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-top: 50px;
+  border-top: 2px solid var(--accent); /* ✅ Divider line at top */
+}
+
+.core-benefits .benefit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.core-benefits .benefit i {
+  color: var(--accent);
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* ===== Check List ===== */
+.check-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 50px;
+  margin-left: -10px;
+  border-top: 2px solid var(--accent); /* ✅ Divider line at top */
+  padding-top: 20px; /* Adds space below the line */
+}
+
+
+.check-list li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-list li::before {
+  content: "";
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.check-list li a {
+  color: var(--text-primary);
+}
+
+.check-list li a:hover {
+  color: var(--accent);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .pricing-columns {
+    grid-template-columns: 1fr;
+  }
+}

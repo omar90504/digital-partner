@@ -1,0 +1,274 @@
+/* ================================
+   🔹 YOUTUBE / VIDEO BACKGROUND
+===================================*/
+.yt-bg-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+.yt-bg-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.yt-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3)
+  );
+  z-index: 1;
+}
+
+.yt-bg-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.yt-bg-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.yt-bg-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.yt-bg-content button {
+  padding: 12px 24px;
+  border: none;
+  background: #fff;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================================
+   🔹 HERO VIDEO BACKGROUND STYLING
+===================================*/
+.section-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* === Background Video === */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* === Mobile Fallback Image === */
+.video-fallback {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/Photo-1.jpg") no-repeat center center/cover;
+  z-index: -2;
+}
+
+/* Hide video on mobile, show fallback */
+@media (max-width: 768px) {
+  /* .video-bg {
+    display: none;
+  }
+  .video-fallback {
+    display: block;
+  } */
+}
+
+/* === Dark Overlay === */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+
+/* === Hero Content === */
+.hero-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.banner-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* === Heading === */
+.title-heading-banner {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  .title-heading-banner {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+
+/* === Layout Flex === */
+.banner-heading {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* === Video Box === */
+.banner-video-content {
+  flex: 1;
+}
+
+.video-flex-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.request-loader {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: #2596be;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.request-loader:hover {
+  background: #1e7ca2;
+  transform: scale(1.05);
+}
+
+.video-flex-box p {
+  font-size: 1rem;
+  color: #eee;
+  max-width: 350px;
+}
+
+/* === Text Section === */
+.banner-content {
+  flex: 1;
+  color: #ddd;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* === CTA + Reviewers === */
+.cta-reviewer-box {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* === Button === */
+.btn.btn-accent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 25px;
+  background: #2596be;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.btn-accent:hover {
+  background: #1e7ca2;
+}
+
+.btn-title span {
+  font-size: 1rem;
+}
+
+.icon-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  color: #2596be;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* === Reviewer Avatars === */
+.banner-reviewer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewer-avatars {
+  display: flex;
+}
+
+.reviewer-avatars .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  margin-left: -10px;
+  background: #ccc;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #fff;
+}

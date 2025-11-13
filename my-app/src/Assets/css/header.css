@@ -1,0 +1,313 @@
+/* ======================================
+   🌗 THEME VARIABLES
+====================================== */
+:root {
+  --bg: #f8f9fc;
+  --text-primary: #101010;
+  --text-secondary: #646464;
+  --accent: #058bd4;
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text-primary: #e6eef8;
+  --text-secondary: #a0a0a0;
+  --accent: #3aa0ff;
+  --card-bg: #1e1e1e;
+}
+
+/* ======================================
+   🧭 HEADER BASE
+====================================== */
+.header {
+  max-width: 100%;
+  margin: 20px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 10px;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+/* Scroll Shadow */
+.header.scrolled {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: transparent;
+}
+
+/* ======================================
+   🖼️ LOGO
+====================================== */
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* ======================================
+   📋 MENU
+====================================== */
+.menu {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  font-size: 18px;
+  font-weight: 600;
+  position: relative; /* for submenu positioning */
+}
+
+.menu a {
+  text-decoration: none;
+  padding: 8px 12px;
+  display: block;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--accent);
+}
+
+/* ======================================
+   📂 SUBMENU (Services Dropdown)
+====================================== */
+.menu .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--card-bg);
+  min-width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.menu .submenu li {
+  width: 100%;
+}
+
+.menu .submenu li a {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu .submenu li:last-child a {
+  border-bottom: none;
+}
+
+.menu .submenu li a:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Show submenu on hover */
+.menu .has-submenu:hover > .submenu {
+  display: block;
+}
+
+/* ======================================
+   🎛️ RIGHT SECTION
+====================================== */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Icon Buttons */
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 28px;
+  transition: transform 0.3s ease;
+  color: var(--text-primary);
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+  color: var(--accent);
+}
+
+/* ======================================
+   📞 PHONE BOX
+====================================== */
+.navbar-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, var(--accent), #00c6ff);
+  padding: 6px 28px;
+  border-radius: 50px;
+  box-shadow: 0 2px 12px rgba(0, 198, 255, 0.4);
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-icon-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 198, 255, 0.5);
+}
+
+/* Icon Circle */
+.icon-circle {
+  background: #fff;
+  color: var(--accent);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Phone Text */
+h6 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ======================================
+   🍔 HAMBURGER MENU ICON
+====================================== */
+.hamburger {
+  display: none;
+}
+
+/* ======================================
+   🌗 THEME VARIANTS
+====================================== */
+.header.light {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-primary);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header.dark {
+  background: rgba(30, 30, 30, 0.9);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ======================================
+   📱 RESPONSIVE DESIGN
+====================================== */
+@media (max-width: 992px) {
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .hamburger:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+  }
+
+  .menu ul {
+    display: none;
+    flex-direction: column;
+    background: var(--card-bg);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    padding: 15px 0;
+  }
+
+  .menu.active ul {
+    display: flex;
+  }
+
+  .menu ul li {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .menu ul li a {
+    padding: 10px 0;
+  }
+
+  .menu .submenu {
+    position: static;
+    background: var(--card-bg);
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .menu .submenu li a {
+    border: none;
+    padding: 8px 0;
+  }
+
+  .navbar-icon-wrapper {
+    display: none;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 12px 18px;
+  }
+
+  .logo-img {
+    height: 48px;
+  }
+
+  .icon-btn {
+    font-size: 22px;
+  }
+}

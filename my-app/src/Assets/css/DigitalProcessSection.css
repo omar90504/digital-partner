@@ -1,0 +1,203 @@
+:root {
+  --bg: #f8f9fc;
+  --text-primary: #101010;
+  --text-secondary: #646464;
+  --accent: #058bd4;
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text-primary: #e6eef8;
+  --text-secondary: #a0a0a0;
+  --accent: #3aa0ff;
+  --card-bg: #1e1e1e;
+}
+
+/* ===== Digital Process Section ===== */
+.digital-process {
+  position: relative;
+  background-color: var(--card-bg);
+  padding: 80px 20px;
+  font-family: 'Arial', sans-serif;
+  color: var(--text-primary);
+  border-radius: 16px;
+  border: 2px solid var(--accent);
+  margin: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+/* 🔹 Moving Accent Background Glow */
+.digital-process::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 30%, rgba(5,139,212,0.2), transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(5,139,212,0.15), transparent 60%);
+  animation: moveAccent 12s infinite linear alternate;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+@keyframes moveAccent {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10%, 10%) rotate(20deg);
+  }
+  100% {
+    transform: translate(-10%, -10%) rotate(-20deg);
+  }
+}
+
+/* Make content appear above background */
+.digital-process * {
+  position: relative;
+  z-index: 2;
+}
+
+.digital-process-banner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.digital-process-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.digital-process-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.digital-process-col {
+  flex: 1;
+  min-width: 300px;
+}
+
+.digital-process-header .top-heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(5, 140, 212, 0.473);
+}
+
+.digital-process-header .title-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.digital-process-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.digital-process-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.digital-process-link a {
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--accent);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(5,139,212,0.3);
+}
+
+.digital-process-link a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(5,139,212,0.6);
+}
+
+/* ===== 3D Animated Steps ===== */
+.digital-process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.digital-process-step {
+  background-color: var(--bg);
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent light reflection */
+.digital-process-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(5,139,212,0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.digital-process-step:hover::before {
+  opacity: 1;
+}
+
+/* 3D Hover Motion */
+.digital-process-step:hover {
+  transform: rotateY(8deg) rotateX(5deg) translateY(-8px);
+  box-shadow: 0 15px 35px rgba(5, 139, 212, 0.3);
+}
+
+.digital-process-step .step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.digital-process-step .process-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(5,139,212,0.4));
+  transition: transform 0.4s ease;
+}
+
+.digital-process-step:hover .process-icon {
+  transform: rotateY(20deg) scale(1.15);
+}
+
+.digital-process-step .step-body h5 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.digital-process-step .step-body p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
