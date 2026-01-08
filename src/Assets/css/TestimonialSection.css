@@ -1,0 +1,305 @@
+/* ===========================
+   Global Theme Variables
+=========================== */
+:root {
+  --bg: #f8f9fc;
+  --text-primary: #101010;
+  --text-secondary: #646464;
+  --accent: #058bd4;
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text-primary: #e6eef8;
+  --text-secondary: #a0a0a0;
+  --accent: #3aa0ff;
+  --card-bg: #1e1e1e;
+}
+
+
+/* ===========================
+   Testimonial Section
+=========================== */
+.testimonial-section {
+  background: var(--bg);
+  color: var(--text);
+  padding: 90px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-container {
+  width: 90%;
+  max-width: 1250px;
+  margin: auto;
+}
+
+/* ===========================
+   Top Section
+=========================== */
+.testimonial-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 70px;
+}
+
+/* === Left Reviewer Card === */
+.testimonial-reviewer {
+  flex: 1 1 40%;
+}
+
+.card-reviewer {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: all 0.3s ease;
+}
+
+.card-reviewer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* === Reviewer Info === */
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  margin-left: -10px;
+  box-shadow: 0 0 0 2px var(--accent);
+  transition: transform 0.3s ease;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+}
+
+.review-detail h6 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+/* === Stats Row === */
+.reviewer-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.stat {
+  text-align: center;
+}
+
+.counter {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.percent {
+  font-size: 16px;
+  vertical-align: super;
+}
+
+.divider-vertical {
+  width: 1px;
+  background: #ddd;
+  height: 40px;
+}
+
+/* === Links === */
+.review-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-item {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.link-item:hover {
+  color: var(--accent);
+}
+
+.link-item i {
+  margin-right: 8px;
+  color: var(--accent);
+}
+
+/* ===========================
+   Right Title Section
+=========================== */
+.testimonial-title {
+  flex: 1 1 55%;
+  display: flex;
+  align-items: center;
+}
+
+.card-title .sub-heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: var(--text);
+  font-weight: 500;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+.card-title h2 {
+  font-size: 32px;
+  color: var(--text);
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.card-title p {
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* ===========================
+   Slider Section
+=========================== */
+.testimonial-slider {
+  position: relative;
+}
+
+.card-testimonial {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  padding: 35px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 230px;
+}
+
+.card-testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* === Stars === */
+.stars {
+  color: #ffc107;
+  margin-bottom: 15px;
+}
+
+/* === Profile Section === */
+.testimonial-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.profile-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-image img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.profile-info {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.testimonial-description {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.swiper-horizontal {
+    .swiper-button-prev, & ~ .swiper-button-prev, &.swiper-rtl .swiper-button-next, &.swiper-rtl ~ .swiper-button-next {
+        left: var(--swiper-navigation-sides-offset, 4px);
+        right: auto;
+        display: none;
+    }
+}
+
+.swiper-horizontal {
+    .swiper-button-next, & ~ .swiper-button-next, &.swiper-rtl .swiper-button-prev, &.swiper-rtl ~ .swiper-button-prev {
+        display: none;
+        right: var(--swiper-navigation-sides-offset, 4px);
+        left: auto;
+    }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 992px) {
+  .testimonial-top {
+    flex-direction: column;
+  }
+
+  .testimonial-title {
+    text-align: center;
+  }
+
+  .card-title p {
+    margin: auto;
+  }
+
+  .testimonial-reviewer {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-reviewer,
+  .card-testimonial {
+    padding: 25px;
+  }
+
+  .card-title h2 {
+    font-size: 26px;
+  }
+}

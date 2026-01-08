@@ -1,0 +1,116 @@
+:root {
+  --bg: #f8f9fc;
+  --text-primary: #101010;
+  --text-secondary: #646464;
+  --accent: #058bd4;
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text-primary: #e6eef8;
+  --text-secondary: #a0a0a0;
+  --accent: #3aa0ff;
+  --card-bg: #1e1e1e;
+}
+
+/* ===== Newsletter Section ===== */
+.newsletter-section {
+  background: var(--bg);
+  color: var(--text-primary);
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-container {
+  background: var(--card-bg);
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.newsletter-title {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.newsletter-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+/* Alerts */
+.newsletter-alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.newsletter-alert.success {
+  background: rgba(5, 139, 212, 0.1);
+  color: var(--accent);
+}
+
+.newsletter-alert.error {
+  background: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+
+/* Form */
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 12px 15px;
+  border: 1px solid var(--text-secondary);
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  background: var(--bg);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(5, 139, 212, 0.15);
+}
+
+.newsletter-button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background: #0077b6;
+}
+
+.arrow-icon {
+  font-size: 18px;
+}

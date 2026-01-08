@@ -1,0 +1,175 @@
+/* === VARIABLES === */
+:root {
+  --bg: #f8f9fc;
+  --text: #101010;
+  --accent: #058bd4;
+  --card-bg: #ffffff;
+  --overlay: rgba(255, 255, 255, 0.45); /* Light mode overlay */
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text: #e6eef8;
+  --accent: #3aa0ff;
+  --card-bg: #1e1e1e;
+  --overlay: rgba(0, 0, 0, 0.55); /* Dark mode overlay */
+}
+
+/* === GUIDE SECTION === */
+.section-guide {
+  background: var(--bg);
+  color: var(--text);
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.guide-banner {
+  background-image: url("../images/Background video.png");
+  background-attachment:fixed ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 90%;
+  max-width: 100%;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay using theme variable */
+.guide-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+  border-radius: 20px;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.guide-content {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 100px 20px;
+  border-radius: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+/* === VIDEO BUTTON === */
+.guide-video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.request-loader {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.request-loader:hover {
+  background: #0a90ec;
+  transform: scale(1.1);
+}
+
+.guide-video-container p {
+  font-size: 16px;
+  color: var(--text);
+  margin-top: 8px;
+}
+
+/* === TEXT === */
+.title-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.guide-text p {
+  font-size: 16px;
+  color: var(--text);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* === VIDEO MODAL === */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.video-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  background: #ff4b4b;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .guide-banner {
+    padding: 30px 20px;
+  }
+
+  .title-heading {
+    font-size: 22px;
+  }
+
+  .guide-text p {
+    font-size: 15px;
+  }
+}

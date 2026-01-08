@@ -1,0 +1,23 @@
+:root {
+  --bg: #ffffff;
+  --text: #0b1220;
+  --accent: #0a84ff;
+  --card-bg: #f8f8f8;
+  --border-color: #e5e5e5;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text: #e6eef8;
+  --accent: #3aa0ff;
+  --card-bg: #1e1e1e;
+  --border-color: #2e3245;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}

@@ -1,0 +1,199 @@
+:root {
+  --bg: #f8f9fc;
+  --text-primary: #101010;
+  --text-secondary: #646464;
+  --accent: #058bd4;
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text-primary: #e6eef8;
+  --text-secondary: #a0a0a0;
+  --accent: #3aa0ff;
+  --card-bg: #1e1e1e;
+}
+
+/* ===== Pricing Section ===== */
+.pricing-section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: var(--bg);
+  padding: 80px 20px;
+  font-family: Arial, sans-serif;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pricing-header .sub-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.pricing-header .title-heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ===== Service Block ===== */
+.service-block {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+/* ===== Plans Row ===== */
+.plans-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center; /* center the plan boxes */
+  width: 100%;
+  max-width: 1600px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Individual Plan Boxes ===== */
+.plan-box {
+  flex: 1 1 calc((100% - 60px) / 3); /* 3 boxes per row with 30px gap */
+  max-width: 500px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* ===== Card Styles ===== */
+.pricing-card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* ===== Highlight Card ===== */
+.highlight-card h4 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.highlight-card p {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* ===== Main Pricing Info ===== */
+.pricing-main h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.pricing-main p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.price h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.price .old-price {
+  text-decoration: line-through;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* ===== Add to Basket Button ===== */
+.btn-accent {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+  margin-top: auto;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-accent:hover {
+  background-color: #0467b0;
+}
+
+/* ===== Check List ===== */
+.check-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.check-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.check-list li span {
+  color: var(--text-primary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1300px) {
+  .plan-box {
+    flex: 1 1 calc((100% - 40px) / 2); /* 2 per row */
+  }
+}
+
+@media (max-width: 900px) {
+  .plan-box {
+    flex: 1 1 100%; /* single column */
+  }
+}

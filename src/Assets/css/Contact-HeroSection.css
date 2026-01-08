@@ -1,0 +1,106 @@
+/* === VARIABLES === */
+:root {
+  --bg: linear-gradient(135deg, #f8f9fc, #eaf6ff);
+  --text: #101010;
+  --text-secondary: #555;
+  --accent: #058bd4;
+  --accent-gradient: linear-gradient(135deg, #058bd4, #3ab6fa);
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.1);
+  --card-shadow: rgba(5, 139, 212, 0.25);
+}
+
+[data-theme="dark"] {
+  --bg: linear-gradient(135deg, #0f111a, #101b2d);
+  --text: #e8edf7;
+  --text-secondary: #c6ccda;
+  --accent: #3aa0ff;
+  --accent-gradient: linear-gradient(135deg, #3aa0ff, #87d1f6);
+  --card-bg: #1b1c22;
+  --card-border: rgba(255, 255, 255, 0.15);
+  --card-shadow: rgba(58, 160, 255, 0.25);
+}
+
+/* === Banner Section === */
+.banner-section {
+  background: var(--accent-gradient);
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 40px var(--card-shadow);
+  transform-style: preserve-3d;
+}
+
+.banner-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 70%);
+  animation: rotateGlow 10s linear infinite;
+}
+
+@keyframes rotateGlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.banner-container {
+  position: relative;
+  z-index: 1;
+  transform: perspective(800px) translateZ(30px);
+}
+
+.banner-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 15px var(--accent);
+  animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: perspective(800px) translateZ(-150px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(800px) translateZ(30px) scale(1);
+  }
+}
+
+.banner-breadcrumb {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumb-link {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.breadcrumb-link:hover {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+.breadcrumb-separator {
+  color: var(--accent);
+}
+
+.breadcrumb-current {
+  color: #fff;
+  font-weight: 600;
+}

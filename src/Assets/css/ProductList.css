@@ -1,0 +1,122 @@
+/* ===== VARIABLES ===== */
+:root {
+  --bg: #f8f9fc;
+  --text-primary: #101010;
+  --text-secondary: #646464;
+  --accent: #058bd4;
+  --card-bg: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --text-primary: #e6eef8;
+  --text-secondary: #a0a0a0;
+  --accent: #3aa0ff;
+  --card-bg: #1e1e1e;
+}
+
+/* General body styling */
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: Arial, sans-serif;
+}
+
+/* Product List Grid */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+/* Product Card */
+.product-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Product Image */
+.product-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Sale Badge */
+.sale-badge {
+  position: absolute;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  margin: 0.5rem;
+  z-index: 10;
+}
+
+/* Product Content */
+.product-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Price Styling */
+.price {
+  margin: 0.5rem 0;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.original-price {
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.sale-price {
+  color: var(--accent);
+}
+
+/* Add to Basket Button */
+.add-to-basket {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background-color 0.3s;
+}
+
+.add-to-basket:hover {
+  background-color: darken(var(--accent), 10%);
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .product-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    width: 90%;
+  }
+}
